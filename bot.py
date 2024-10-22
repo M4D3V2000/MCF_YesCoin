@@ -327,7 +327,7 @@ async def main():
     license_key = db.getSettings("license", None)
     if license_key is None or license_key == "":
         log.error("<r>❌ License key is not set!</r>")
-        exit(1)
+        #exit(1)
     else:
         log.info(f"<g>🔑 License key: </g><c>{utils.hide_text(license_key)}</c>")
 
@@ -338,7 +338,7 @@ async def main():
 
     if modules is None or "error" in modules:
         log.error(f"<r>❌ Unable to get modules: {modules['error']}</r>")
-        exit(1)
+        #exit(1)
 
     module_found = False
     for module in modules:
@@ -348,7 +348,7 @@ async def main():
 
     if not module_found:
         log.error(f"<r>❌ {module_name} module is not found in the license!</r>")
-        exit(1)
+        #exit(1)
 
     log.info(f"<g>📦 {module_name} module is found in the license!</g>")
 
